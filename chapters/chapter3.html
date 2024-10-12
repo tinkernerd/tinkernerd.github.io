@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Conditional Logic</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main>
+        <section>
+            <h1>Chapter 3: Conditional Logic</h1>
+            <form id="conditionForm">
+                <label for="inputValue">Enter a value:</label>
+                <input type="text" id="inputValue" name="inputValue" required>
+
+                <button type="button" onclick="checkValue()">Check</button>
+            </form>
+            <p id="conditionResult"></p>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function checkValue() {
+            const value = document.getElementById('inputValue').value;
+            let message = '';
+
+            if (value === 'yes') {
+                message = 'You entered yes!';
+            } else if (value === 'no') {
+                message = 'You entered no!';
+            } else {
+                message = 'Unknown input!';
+            }
+
+            document.getElementById('conditionResult').innerText = message;
+        }
+    </script>
+</body>
+
+</html>

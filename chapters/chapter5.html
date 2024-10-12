@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Web Security Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main>
+        <section>
+            <h1>Chapter 5: Web Security Details</h1>
+            <h2>Browser Properties</h2>
+            <ul id="browserInfo"></ul>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const browserInfo = document.getElementById('browserInfo');
+            const properties = {
+                'App Name': navigator.appName,
+                'App Version': navigator.appVersion,
+                'Platform': navigator.platform,
+                'Language': navigator.language,
+                'Cookies Enabled': navigator.cookieEnabled,
+                'User Agent': navigator.userAgent
+            };
+
+            for (const [key, value] of Object.entries(properties)) {
+                const li = document.createElement('li');
+                li.textContent = `${key}: ${value}`;
+                browserInfo.appendChild(li);
+            }
+        });
+    </script>
+</body>
+
+</html>

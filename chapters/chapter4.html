@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Form & Exception Handling</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main>
+        <section>
+            <h1>Chapter 4: Form & Exception Handling</h1>
+            <form id="errorForm" onsubmit="return validateForm()">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="errorMessage"></p>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function validateForm() {
+            try {
+                const email = document.getElementById('email').value;
+                if (!email.includes('@')) {
+                    throw 'Please enter a valid email address.';
+                }
+                alert('Form submitted successfully!');
+                return true;
+            } catch (error) {
+                document.getElementById('errorMessage').innerText = error;
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

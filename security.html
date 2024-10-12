@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Security</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main>
+        <section class="security-info">
+            <h1>Understanding Web Security</h1>
+            <p>Web security is crucial in today's online world. Here are some steps you can take to ensure your safety
+                while browsing the web:</p>
+
+            <h2>Browser Information</h2>
+            <p>Below are some properties of your system that websites can access:</p>
+            <ul id="browserInfo">
+                <!-- JS will populate this list -->
+            </ul>
+
+            <h2>Best Practices for Web Security</h2>
+            <p>Here are three trusted resources on how to stay safe online:</p>
+            <ul>
+                <li><a href="https://www.cisa.gov/tips/stay-safe-online" target="_blank">Stay Safe Online - CISA</a> -
+                    Learn about the latest security tips and best practices to protect yourself online.</li>
+                <li><a href="https://www.consumer.ftc.gov/topics/online-security" target="_blank">FTC Online
+                        Security</a> - Official FTC guidelines on securing your devices and staying safe on the
+                    internet.</li>
+                <li><a href="https://us.norton.com/internetsecurity-how-to.html" target="_blank">Norton Web Security
+                        Tips</a> - Comprehensive articles on web security and safeguarding your personal information.
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const browserInfo = document.getElementById('browserInfo');
+            const properties = {
+                'App Name': navigator.appName,
+                'App Version': navigator.appVersion,
+                'Platform': navigator.platform,
+                'Language': navigator.language,
+                'Cookies Enabled': navigator.cookieEnabled,
+                'User Agent': navigator.userAgent
+            };
+
+            for (const [key, value] of Object.entries(properties)) {
+                const li = document.createElement('li');
+                li.textContent = `${key}: ${value}`;
+                browserInfo.appendChild(li);
+            }
+        });
+    </script>
+</body>
+
+</html>
