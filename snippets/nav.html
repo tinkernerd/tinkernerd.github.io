@@ -1,13 +1,32 @@
-<header>
-    <a class="logo" href="index.html"><img src="images/logo.svg" alt="logo"></a>
-    <nav>
-        <ul class="nav__links">
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="security.html">Web Security</a></li>
-            <li><a href="resume.html">Resume</a></li>
-        </ul>
-    </nav>
-    <a class="cta" href="contact.html">Contact</a>
-    <p class="menu cta">Menu</p>
-</header>
+<nav class="nav">
+    <div class="logo">
+        <a href="index.html">
+            <h1 class="logo-text">TheTinkeringNerd.</h1>
+        </a>
+    </div>
+    <ul class="nav-main-menu">
+        <li><a href="about.html" class="nav-link">About Me</a></li>
+        <li class="dropdown">
+            <a href="projects.html" class="nav-link"><span>Projects</span> <i class="fa fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Software and Apps</a></li>
+                <li><a href="#">Cybersecurity</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="nav-link"><span>Cybersecurity</span> <i class="fa fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+                <li><a href="https://github.com/tinkernerd/Cybersecurity-Notes">"Notes"</a></li>
+                <li><a href="security.html">Web Security</a></li>
+            </ul>
+        </li>
+        <li><a href="resume.html" class="nav-link">Resume</a></li>
+    </ul>
+    <a href="contact.html">
+        <button class="btn">
+            <span>Contact</span>
+            <i class="fa fa-right-to-bracket"></i>
+        </button>
+    </a>
+</nav>

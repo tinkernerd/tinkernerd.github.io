@@ -1,0 +1,266 @@
+/* ===== VARIABLES ===== */
+:root{
+    --bg-color: #387c3b;
+    --primary-color: #000000;
+    --second-color: #0088a9;
+    --hover-bg-color: #efefef;
+    --shadow-1: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-2: 0px 2px 10px rgba(26, 112, 224, 0.4);
+    --iconcolor: #black;
+    --logo-border: #fff;
+    --nav-button-bg-color: #fff;
+    --nav-button-color: #000;
+
+}
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); 
+/* General reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+/* Banner Section */
+.banner {
+  width: 100%; /* Full width of the screen */
+  height: 150px; /* Fixed height for the banner */
+  background-color: #3498db; /* Change to your preferred background color */
+  display: flex;
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  overflow: hidden; /* Prevents content overflow */
+  box-sizing: border-box; /* Includes padding and border in the element’s total width and height */
+}
+
+.banner img {
+  width: 100%;
+  height: auto; /* Keeps image aspect ratio */
+}
+
+.banner-content {
+  color: white;
+  font-size: 24px; /* Adjust text size as needed */
+  text-align: center;
+}
+
+
+
+/* ===== Navigation Bar ===== */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 3vw;
+    height: 70px;
+    background: var(--bg-color);
+    color: var(--primary-color);
+    border: var(--logo-border) 1px solid;
+    box-shadow: var(--shadow-1);
+}
+.nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.nav ul{
+    list-style-type: none;
+}
+
+.logo h1{
+    font-weight: 600;
+}
+.logo h1:hover {
+  color: var(--logo-border); /* Change the h1 text color when hovered */
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+.nav-main-menu{
+    display: flex;
+}
+.nav-link{
+    padding: 26px 10px;
+    margin-inline: 10px;
+    transition: .3s;
+}
+.nav-link:hover{
+    color: var(--hover-bg-color);
+}
+.nav span{
+    margin-right: 5px;
+}
+.fa-chevron-down, .fa-chevron-right{
+    font-size: 12px;
+    transition: .3s;
+}
+
+.dropdown:hover .fa-chevron-down, .sub-dropdown:hover .fa-chevron-right{
+    transform: rotate(180deg);
+}
+.dropdown:hover .nav-link{
+    color: var(--hover-bg-color);
+}
+
+/* ===== Dropdown ===== */
+.dropdown{
+    position: relative;
+}
+.nav-main-menu .dropdown-content{
+    display: none;
+    position: absolute;
+    top: 46px;
+    left: 0;
+    background: var(--bg-color);
+    min-width: 240px;
+    border-top: var(--logo-border) 3px solid ;
+    border-radius: 0 0 3px 3px;
+    animation: slideUp .3s;
+}
+.dropdown-content li{
+    padding: 20px;
+}
+.dropdown-content li:hover{
+    background: var(--hover-bg-color);
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+/* ===== Improved Contact Me Button ===== */
+.nav button {
+    background-color: var(--nav-button-bg-color); /* Background color variable */
+    color: var(--nav-button-color); /* Text color */
+    border: none; /* Remove border */
+    padding: 12px 32px; /* Add more padding for better touch target size */
+    border-radius: 25px; /* Smooth border radius for a pill-like button */
+    font-size: 16px; /* Adjust font size for better readability */
+    font-weight: 600; /* Make the text bold for emphasis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    cursor: pointer; /* Pointer cursor for interaction */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* ===== Button Styling ===== */
+.nav button:active {
+    transform: translateY(2px); /* Button slightly "presses down" when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lessen the shadow when pressed */
+}
+/* Hover effect */
+.nav button:hover {
+    background-color: var(--second-color); /* Change background on hover */
+    color: #fff; /* White text on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+
+/* ===== Sub - Dropdown ===== */
+.nav-main-menu .sub-dropdown-content{
+   display: none;
+   position: absolute;
+   top: 34%;
+   left: 100%;
+   background: var(--bg-color);
+   min-width: 240px;
+   border-top: 3px solid #ccc;
+   border-radius: 3px;
+   animation: slideUp .3s;
+   box-shadow: var(--shadow-1);
+}
+@keyframes slideUp {
+    from{
+        margin-top: 20px;
+    }
+    to{
+        margin-top: 0;
+    }
+}
+.dropdown-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sub-dropdown:hover .sub-dropdown-content{
+    display: block;
+}
+
+/* Add these styles to ensure the footer stays at the bottom */
+body, html {
+  height: 100%; /* Make sure the body and HTML take up the full height */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Ensures that the main content area takes up the remaining space */
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--bg-color); /* Match header background */
+  color: var(--iconcolor); /* Light text color */
+  padding: 20px 10%;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%; /* Ensure it takes the full width */
+}
+
+/* Footer Paragraph */
+footer p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Footer Links */
+footer a {
+  color: var(--iconcolor); /* Default color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--hover-bg-color); /* Hover color for links */
+}
+
+/* Social Links Styling */
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: var(--iconcolor); /* Default color */
+  font-size: 24px; /* Size of the icons */
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--hover-bg-color); /* Hover color for icons */
+}
+
+.social-links i {
+  transition: transform 0.3s ease; /* Smooth icon scale on hover */
+}
+
+.social-links i:hover {
+  transform: scale(1.2); /* Slightly enlarges icon on hover */
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 600px) {
+  footer {
+    padding: 20px 5%;
+  }
+
+  .social-links {
+    margin-top: 10px;
+  }
+
+  .social-links a {
+    font-size: 20px; /* Smaller icons on smaller screens */
+    margin: 0 5px;
+  }
+}
